@@ -88,7 +88,7 @@ exports.login = async (req,res,next)=>{
       }else{
         // create jwt token
         const token = jwt.sign({id:userExist._id},process.env.SECRET_TOKEN,{expiresIn:"1h"});
-        res.header('auth-token',token).json({message:"login successful",user:userExist,token:token})
+        res.status(201).json({message:"login successful",user:userExist,token:token})
       }
     }
   }
