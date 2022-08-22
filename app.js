@@ -41,6 +41,9 @@ app.use((req,res,next)=>{
   next();
 })
 
+app.get("/", (req, res)=> {
+  return res.send("Product Api running and up");
+})
 
 app.use('/products',productRoutes);
 app.use('/orders',orderRoutes);
